@@ -17,5 +17,4 @@ for i = 1:(limit-1)
     end
 end
 
-println(size(multiples))
 println(sum(multiples))
