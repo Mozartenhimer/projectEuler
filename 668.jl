@@ -25,37 +25,24 @@ function isPrime(N)
    end
    return true 
 end
-# function primes(nPrimes:Int64)
-#    # naive Prime finding
-#    P = []
+function findPrimes(nPrimes)
    
-#    t::Int64 = 3;# test
-#    limit = floor(sqrt(n))
-#    while(t <= limit)
-#       if n % t == 0
-         
-#       end
-#       t += 2
-#    end
-#    show(primes)
-
-# end
-# function primeFactors(n::Int64)
-   
-
-# end
-
-# function isSmooth()
-# end
-for i = 2:20
-   # println(i)
-   # show(isPrime(i))
-   if isPrime(i)
-      println(i)
+   primes = [2]
+   # for i = 2:upTo
+   i = 3
+   nFound = 1
+   while(nFound < nPrimes)
+      if isPrime(i)
+         push!(primes,i)
+         nFound += 1
+      end
+      i+= 2
    end
-   # @printf("i=%d : %d\n",i,isPrime(i))
+   return pop!(primes)
 end
-
+@time println(findPrimes(10001))
+@time println(findPrimes(6))
+#@time findPrimes(10000000000)
 # primeFactors(6)
 
 # @printf("fibSum: %d\n",fibSum)
