@@ -1,0 +1,5 @@
+include("primeAlgo.jl")
+show(primeFactors(13195))
+factors = primeFactors(600851475143)
+show(max(factors))
+ max()
