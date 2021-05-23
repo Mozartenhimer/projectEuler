@@ -36,13 +36,15 @@ function M(p::Int,q::Int,N::Int)
     return max
 end
 function S(N)
-    primes = findPrimesUpTo(floor(sqrt(N)))
+    # primes = findPrimesUpTo(floor(sqrt(N)))
+    primes = findPrimesUpTo(N)
     nPrimes = length(primes)
     sum =0
     for pIdx = 1:nPrimes
         for qIdx = pIdx+1:nPrimes
             p=primes[pIdx]
             q=primes[qIdx]
+            # println("p=",p,"q=",q)
             sum += M(p,q,N)
         end
     end
@@ -57,4 +59,7 @@ println("S(", test,")=",S(test))
 
 @assert S(100) == 2262 "S(N) not correct "
 println("All asserts passed")
-println(S(10000000))
+@time(S(100))
+@time(S(1000))
+@time(S(10000))
+# println(S(10000000))
