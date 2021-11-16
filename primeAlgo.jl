@@ -37,7 +37,7 @@ function isPrime(N)
  function findPrimesUpTo(upTo,startAt = 0)
    i = startAt
    if(startAt <= 3)
-    primes = [2]
+    primes = Int64[2]
     i = 3
    end
    while(i <= upTo)
